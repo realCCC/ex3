@@ -1,10 +1,11 @@
-package com.example.demo.dto;
+package com.example.ex3.dto;
 
+import lombok.Builder;
 import lombok.Data;
-import b
 import java.time.LocalDateTime;
 
 @Data
+@Builder(toBuilder = true)
 public class SampleDTO {
     private Long sno;
     private String first;

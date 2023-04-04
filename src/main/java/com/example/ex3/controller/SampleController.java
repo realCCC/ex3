@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package com.example.ex3.controller;
 
-import com.example.demo.dto.SampleDTO;
+import com.example.ex3.dto.SampleDTO;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
