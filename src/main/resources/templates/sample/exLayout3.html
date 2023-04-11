@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{/fragments/fragment3 :: target(~{this:: #ul_filst}, ~{this:: #ul_second})}">
+  <ul id="ul_filst">
+    <li>aaaaaa</li>
+    <li>bbbbbb</li>
+    <li>cccccc</li>
+  </ul>
+  <ul id="ul_second">
+    <li>11111</li>
+    <li>22222</li>
+    <li>33333</li>
+  </ul>
+</th:block>
+</html>

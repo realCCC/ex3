@@ -19,12 +19,14 @@ import java.util.stream.IntStream;
 
 public class SampleController {
     @GetMapping("/test1")
-
     public void ex1(){
         log.info("test1의 정보");
     }
 
-    @GetMapping({"/ex2"})
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+    @GetMapping({"/ex2","/exLink","exFormat"})
     public void exModel(Model model){
         List<SampleDTO>list = IntStream.rangeClosed(1, 20).asLongStream().mapToObj(
                 i->{
@@ -40,6 +42,9 @@ public class SampleController {
         model.addAttribute("list",list);
     }
 
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
     @GetMapping("exInline")
     public String exInline(RedirectAttributes redirectAttributes){
         SampleDTO dto = SampleDTO.builder()
@@ -52,8 +57,30 @@ public class SampleController {
         redirectAttributes.addFlashAttribute("dto", dto);
         return "redirect:/sample/ex3";
     }
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
     @GetMapping("/ex3")
     public void ex3(){
         log.info("ex3() 호출됨");
     }
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+    @GetMapping("/exLayout")
+    public void exLayout1(){
+        log.info("exLayout() 호출됨");
+    }
+
+    @GetMapping("/exLayout2")
+    public void exLayout2(){
+        log.info("exLayout2() 호출됨");
+    }
+    @GetMapping("/exLayout3")
+    public void exLayout3(){
+        log.info("exLayout3() 호출됨");
+    }
+
 }
