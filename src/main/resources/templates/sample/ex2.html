@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .target{
+            background-color: blue;
+        }
+    </style>
 </head>
 <body>
   <ul>
@@ -10,7 +15,13 @@
 <!--      [[${dto}]]-->
 <!--    </li>-->
 
-      <li th:each="dto, state : ${list}" th:text="${dto.sno % 5 == 0}?${dto.sno} : ${dto.first}"></li>  </ul>
+<!--      <li th:each="dto, state : ${list}" th:text="${dto.sno % 5 == 0}?${dto.sno} : ${dto.first}"></li> -->
+<!--      <li th:each="dto: ${list}" th:class="${dto.sno % 5 == 0}?'target'" th:text="${dto}">-->
+      <th:block th:each="dto: ${list}">
+          <li th:text="${dto.sno % 5 == 0}?${dto.sno}:${dto.first}"></li>
+      </th:block>
+
+  </ul>
 
 </body>
 </html>
